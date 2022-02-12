@@ -6,8 +6,10 @@
     vars:
       user: ubuntu
     tasks:
-      - name: Update apt cache
+      - name: Update apt repos
         apt:
+          name: "*"
+          state: latest
           update_cache: yes
       - name: Install dependencies
         apt:
